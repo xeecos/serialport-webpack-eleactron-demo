@@ -1,11 +1,23 @@
 {
   "name": "serialport-webpack-eleactron-demo",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "./dist/app.bundle.js",
   "repository": "https://github.com/xeecos/serialport-webpack-eleactron-demo",
   "author": "虎子哥 <flashindream@gmail.com>",
   "license": "MIT",
+  "scripts": {
+    "start": "electron .",
+    "watch": "webpack --progress --colors --watch ",
+    "pack": "webpack --config ./webpack.config.js"
+  },
   "devDependencies": {
-    "webpack": "^5.0.0-rc.6"
+    "@babel/core": "^7.15.0",
+    "babel-loader": "^8.2.2",
+    "webpack": "^5.0.0-rc.6",
+    "webpack-cli": "^4.8.0"
+  },
+  "dependencies": {
+    "electron": "^13.2.2",
+    "serialport": "^9.2.0"
   }
 }
