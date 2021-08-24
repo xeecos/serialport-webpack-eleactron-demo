@@ -8,11 +8,15 @@
   "scripts": {
     "start": "electron .",
     "watch": "webpack --progress --colors --watch ",
-    "pack": "webpack --config ./webpack.config.js"
+    "pack": "webpack --config ./webpack.config.js",
+    "packager": "electron-packager . --platform=win32 --arch=x64 --asar --overwrite=true --out=releases --ignore=\"(src|installer|releases|scripts|node_modules|gulpfile.js|README.md|setup.iss|webpack.config.js|webpack.prod.config.js|yarn-error.log)\"  --no-prune",
+    "rebuild": "electron-rebuild --arch=x64 -f -o serialport & electron-rebuild --arch=x64 -f -o bindings"
   },
   "devDependencies": {
     "@babel/core": "^7.15.0",
     "babel-loader": "^8.2.2",
+    "electron-packager": "^15.3.0",
+    "electron-rebuild": "^3.2.0",
     "webpack": "^5.0.0-rc.6",
     "webpack-cli": "^4.8.0"
   },

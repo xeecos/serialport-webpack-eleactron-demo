@@ -10,6 +10,9 @@ module.exports = [
             filename: "app.bundle.js"
         },
         target: "electron-main",
+        externals:  {
+            serialport: 'commonjs serialport'
+        },
         module: {
             exprContextCritical: true,
             wrappedContextCritical: true,
